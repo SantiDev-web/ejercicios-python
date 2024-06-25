@@ -24,14 +24,14 @@ class UserDB(User):
 users_db = {
     "santi": {
         "username": "santi",
-        "full_name": "Santi Luque Torrejon",
+        "full_name": "Santi pepinillo tomate",
         "email": "santi@gmail.com",
         "diabled": False,
         "password": "123456"
         },
     "david": {
         "username": "david",
-        "full_name": "David Corral Plaza",
+        "full_name": "David xx xx",
         "email": "david@gmail.com",
         "diabled": True,
         "password": "654321"
