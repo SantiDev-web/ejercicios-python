@@ -1,10 +1,10 @@
 import React from 'react'
-import { Box, Typography } from '@mui/material'
+import { Box, Typography, Grid } from '@mui/material'
 import { styled } from '@mui/system'
 import { Slide, Fade } from "react-awesome-reveal";
 import Stack from '@mui/material/Stack';
 import punisherLogo from '../assets/punisher.svg';
-
+import Login from './login';
 
 const ImgContainer = styled(Box)({
     height: '100vh',
@@ -16,18 +16,16 @@ const ImgContainer = styled(Box)({
     backgroundRepeat: 'no-repeat',
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
 });
 
 const ContentStack = styled(Stack)({
-    position: 'absolute',
-    left: '60px',
-    top: '50%',
-    transform: 'translateY(-50%)',
     textAlign: 'left',
     color: 'white',
-    maxWidth: 'calc(100% - 60px)'
-  });
+    maxWidth: 'calc(100% - 60px)',
+    marginLeft:'60px'
+});
+
 const StyledImg = styled('img')({
     width: '200px',
     height: '200px',
@@ -35,21 +33,29 @@ const StyledImg = styled('img')({
     filter: 'invert(1)',
     display: 'block',
     margin: '0 auto',
-    marginTop:'50px'
-  });
+    marginTop: '50px',
+});
+
 const LoginApp: React.FC = () => {
     return (
         <section id='img'>
             <ImgContainer>
-                <ContentStack>
-                    <Typography variant='h1' component='h1' sx={{ fontFamily: 'Black Ops One', color:'white', textAlign:'center' }}>
-                        <Slide delay={2} direction='up'>Fitness Coaching</Slide>
-                    </Typography>
-                    <Typography variant='h5' component='p' sx={{ fontFamily: 'Black Ops One', color:'white', textAlign:'center' }}>
-                    <Fade delay={1e3} cascade damping={1e-1}>ONE MORE REP!!</Fade>
-                    </Typography>
-                    <StyledImg src={punisherLogo} alt="Punisher Logo" />
-                </ContentStack>
+                <Grid container spacing={2} alignItems="center" justifyContent="center">
+                    <Grid item xs={12} md={6}>
+                        <ContentStack>
+                            <Typography variant='h1' component='h1' sx={{ fontFamily: 'Black Ops One', color: 'white', textAlign: 'center' }}>
+                                <Slide delay={2} direction='up'>Fitness Coaching</Slide>
+                            </Typography>
+                            <Typography variant='h5' component='p' sx={{ fontFamily: 'Black Ops One', color: 'white', textAlign: 'center' }}>
+                                <Fade delay={1e3} cascade damping={1e-1}>ONE MORE REP!!</Fade>
+                            </Typography>
+                            <StyledImg src={punisherLogo} alt="Punisher Logo" />
+                        </ContentStack>
+                    </Grid>
+                    <Grid item xs={12} md={6}>
+                        <Login />
+                    </Grid>
+                </Grid>
             </ImgContainer>
         </section>
     )
